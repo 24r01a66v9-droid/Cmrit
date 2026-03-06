@@ -1,0 +1,12 @@
+# Render Blueprint – deploy as Web Service
+# If your repo root is the parent of this file, set "Root Directory" to Cmrit in the Render dashboard.
+
+services:
+  - type: web
+    name: cmrit
+    runtime: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
